@@ -80,10 +80,8 @@
   @media (max-width:980px){.products{grid-template-columns:repeat(2,minmax(0,1fr))}}
   @media (max-width:480px){.products{grid-template-columns:1fr}}
   .product{display:flex;flex-direction:column;gap:12px}
-  .photo{aspect-ratio:4/5;max-width:100%;background:var(--card);border:1px dashed var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--mute);text-align:center;padding:16px}
-  .photo .swatch{width:100%;flex:1;display:flex;align-items:center;justify-content:center;padding:18px}
-  .photo .swatch .t{font-size:clamp(20px,2.2vw,26px);line-height:.95;text-align:center;color:var(--bone)}
-  .photo .ph{font-size:10px;letter-spacing:2px;text-transform:uppercase}
+  .photo{aspect-ratio:1040/1244;max-width:100%;background:#2b2925;overflow:hidden}
+  .photo img{display:block;width:100%;height:100%;object-fit:cover}
   .product h3{font-size:22px;line-height:1;letter-spacing:.5px}
   .product .meta{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px;color:var(--mute)}
   .product .meta .price{color:var(--bone);font-weight:700;font-variant-numeric:tabular-nums}
@@ -93,12 +91,17 @@
 
   /* judge not band */
   .band{padding-block:56px;border-bottom:1px solid var(--line);background:var(--red);color:var(--bone)}
-  .band .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .band .wrap{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:center}
+  .band .txt{display:flex;flex-direction:column;gap:18px}
+  .band img{display:block;width:100%;max-width:300px;height:auto;justify-self:end}
+  @media (max-width:760px){.band .wrap{grid-template-columns:1fr}.band img{justify-self:start;max-width:260px}}
   .band h2{font-size:clamp(44px,8vw,110px);line-height:.9}
-  .band .ref{text-align:right;max-width:26ch}
+  .band .ref{max-width:30ch}
   .band .ref .eyebrow{color:var(--bone-2)}
   .band .ref p{margin:6px 0 0;font-size:18px;font-style:italic}
-  @media (max-width:640px){.band .ref{text-align:left}}
+
+  .concepts{padding-block:64px;border-bottom:1px solid var(--line)}
+  .concepts-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:560px}
 
   /* story */
   .story{padding-block:64px;border-bottom:1px solid var(--line)}
@@ -126,6 +129,7 @@
     <a class="logo anton" href="#top">FNOK</a>
     <nav>
       <a href="#name">The name</a>
+      <a href="#concepts">Concepts</a>
       <a href="#story">Story</a>
       <a class="shop" href="#shop">Shop</a>
     </nav>
@@ -173,40 +177,28 @@
 
       <div class="products">
         <article class="product">
-          <div class="photo">
-            <div class="swatch" style="background:#111110"><div class="t anton">Jesus ate with worse people than you.</div></div>
-            <div class="ph">[ product photo ]</div>
-          </div>
+          <div class="photo"><img src="/img/worse-people.png" alt="Black tee: Jesus ate with worse people than you. Matthew 9:10-11" width="1040" height="1244" loading="lazy"></div>
           <h3 class="anton">Worse People</h3>
           <div class="meta"><span>Black &middot; bone &amp; gold ink</span><span class="price">[$XX]</span></div>
           <a class="buy" href="#shop">Buy</a>
         </article>
 
         <article class="product">
-          <div class="photo">
-            <div class="swatch" style="background:#9b1c1c"><div class="t anton">I&#8217;ve done way worse than being myself.</div></div>
-            <div class="ph">[ product photo ]</div>
-          </div>
+          <div class="photo"><img src="/img/way-worse.png" alt="Maroon tee: I've done way worse than being myself. And God still picked up." width="1040" height="1244" loading="lazy"></div>
           <h3 class="anton">Way Worse</h3>
           <div class="meta"><span>Maroon &middot; bone ink</span><span class="price">[$XX]</span></div>
           <a class="buy" href="#shop">Buy</a>
         </article>
 
         <article class="product">
-          <div class="photo">
-            <div class="swatch" style="background:#f4f1ea"><div class="t anton" style="color:#111110">Est&aacute;s bien.<br><span style="font-size:.6em;color:#9b1c1c">(you&#8217;re f&#8217;n ok, mijo.)</span></div></div>
-            <div class="ph">[ product photo ]</div>
-          </div>
+          <div class="photo"><img src="/img/estas-bien.png" alt="Bone tee: Estás bien. (you're f'n ok, mijo.)" width="1040" height="1244" loading="lazy"></div>
           <h3 class="anton">Est&aacute;s Bien</h3>
           <div class="meta"><span>Bone &middot; black &amp; red ink</span><span class="price">[$XX]</span></div>
           <a class="buy" href="#shop">Buy</a>
         </article>
 
         <article class="product">
-          <div class="photo">
-            <div class="swatch" style="background:#111110"><div class="t anton">It&#8217;s F<span style="display:inline-block;width:1.1em;height:.6em;background:#f4f1ea;vertical-align:-.02em"></span> OK</div></div>
-            <div class="ph">[ product photo ]</div>
-          </div>
+          <div class="photo"><img src="/img/redacted.png" alt="Black tee: It's F[redacted] OK to be who you are." width="1040" height="1244" loading="lazy"></div>
           <h3 class="anton">Redacted</h3>
           <div class="meta"><span>Black &middot; bone ink</span><span class="price">[$XX]</span></div>
           <a class="buy" href="#shop">Buy</a>
@@ -219,10 +211,38 @@
 
   <section class="band">
     <div class="wrap">
-      <h2 class="anton">Judge not.</h2>
-      <div class="ref">
-        <div class="eyebrow">Matthew 7:1</div>
-        <p class="serif">It&#8217;s right there. First line. On the back of every shirt.</p>
+      <div class="txt">
+        <h2 class="anton">Judge not.</h2>
+        <div class="ref">
+          <div class="eyebrow">Matthew 7:1</div>
+          <p class="serif">It&#8217;s right there. First line. On the back of every shirt.</p>
+        </div>
+      </div>
+      <img src="/img/back-judge-not.png" alt="Back of the shirt: Judge Not. Matthew 7:1" width="1040" height="1244" loading="lazy">
+    </div>
+  </section>
+
+
+  <section class="concepts" id="concepts">
+    <div class="wrap">
+      <div class="shop-head">
+        <div>
+          <div class="eyebrow">Also on the table</div>
+          <h2 class="anton">Concepts we haven&#8217;t printed yet.</h2>
+        </div>
+        <div class="eyebrow">Tell us which ones you&#8217;d wear</div>
+      </div>
+      <div class="products concepts-grid">
+        <article class="product">
+          <div class="photo"><img src="/img/definition.png" alt="Bone tee: fnok, adj. 1. f'n ok. acceptable exactly as-is. 2. you, specifically." width="1040" height="1244" loading="lazy"></div>
+          <h3 class="anton">Definition</h3>
+          <div class="meta"><span>Bone &middot; black ink</span><span class="price">Concept</span></div>
+        </article>
+        <article class="product">
+          <div class="photo"><img src="/img/back-judge-not.png" alt="Back print: Judge Not. Matthew 7:1" width="1040" height="1244" loading="lazy"></div>
+          <h3 class="anton">Judge Not (back)</h3>
+          <div class="meta"><span>Any tee &middot; upper back</span><span class="price">Pairs with all</span></div>
+        </article>
       </div>
     </div>
   </section>
