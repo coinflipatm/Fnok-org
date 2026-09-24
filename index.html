@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FNOK — It's f'n ok to be who you are. Flint, MI</title>
+<meta name="description" content="FNOK is a hand-printed clothing brand from Flint, Michigan. Shirts for people who've been judged and people who are tired of watching it happen. All people. No exceptions.">
+<meta property="og:title" content="FNOK — It's f'n ok to be who you are.">
+<meta property="og:description" content="Hand-printed shirts from Flint, Michigan. All people. No exceptions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fnok.org/">
+<meta property="og:image" content="https://fnok.org/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#111110">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap">
+<style>
+  :root{
+    --ink:#111110;
+    --bone:#f4f1ea;
+    --bone-2:#e8dcc0;
+    --mute:#a8a49a;
+    --line:#2e2c28;
+    --red:#9b1c1c;
+    --gold:#c9a227;
+    --card:#1a1917;
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ink);color:var(--bone);font-family:'Archivo',system-ui,sans-serif;font-size:16px;line-height:1.5}
+  a{color:inherit}
+  html{color-scheme:dark}
+  .wrap{max-width:1100px;margin:0 auto;padding-inline:20px}
+  .anton{font-family:'Anton','Archivo Narrow',Impact,sans-serif;font-weight:400;text-transform:uppercase}
+  .serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+  .eyebrow{font-weight:700;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--mute)}
+  h1,h2,h3{margin:0;text-wrap:balance}
+
+  /* top bar */
+  .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ink);border-bottom:1px solid var(--line)}
+  .bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+  .logo{font-size:28px;letter-spacing:-1px;line-height:1;text-decoration:none}
+  .bar nav{display:flex;gap:22px;align-items:center}
+  .bar nav a{text-decoration:none;font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+  .bar nav a.shop{background:var(--bone);color:var(--ink);padding:10px 16px}
+  .bar nav a:hover{color:var(--gold)}
+  .bar nav a.shop:hover{background:var(--gold);color:var(--ink)}
+  @media (max-width:560px){.bar nav a:not(.shop){display:none}}
+
+  /* hero */
+  .hero{padding-block:72px 64px;border-bottom:1px solid var(--line)}
+  .hero .eyebrow{margin-bottom:22px}
+  .hero h1{font-size:clamp(56px,11vw,150px);line-height:.9;letter-spacing:-.02em}
+  .hero h1 .row{display:flex;align-items:flex-end;gap:.12em;flex-wrap:wrap}
+  .redact{display:inline-block;background:var(--bone);height:.62em;width:1.1em;margin-bottom:.08em;transform-origin:left;animation:redact .5s cubic-bezier(.2,.8,.2,1) .2s both}
+  @keyframes redact{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @media (prefers-reduced-motion:reduce){.redact{animation:none}}
+  .hero .sub{display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;margin-top:36px}
+  .hero .sub p{margin:0;max-width:34ch;font-size:24px;line-height:1.3;font-style:italic}
+  .hero .sub .small{max-width:38ch;font-size:14px;color:var(--mute);font-style:normal;font-family:'Archivo',sans-serif}
+  .hero .sub .small strong{color:var(--bone)}
+
+  /* the name */
+  .name{padding-block:64px;border-bottom:1px solid var(--line)}
+  .grid2{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:start}
+  @media (max-width:760px){.grid2{grid-template-columns:1fr;gap:24px}}
+  .name h2{font-size:clamp(40px,6vw,72px);line-height:.95}
+  .name h2 span{color:var(--gold)}
+  .name p{margin:0 0 14px;font-size:21px;line-height:1.4;max-width:58ch}
+  .name p.kick{font-style:italic;color:var(--bone-2)}
+
+  /* shop */
+  .shop{padding-block:64px;border-bottom:1px solid var(--line)}
+  .shop-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+  .shop-head h2{font-size:clamp(36px,5vw,56px);line-height:1}
+  .shop-head .eyebrow{margin-bottom:6px}
+  .products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+  @media (max-width:980px){.products{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:480px){.products{grid-template-columns:1fr}}
+  .product{display:flex;flex-direction:column;gap:12px}
+  .photo{aspect-ratio:4/5;max-width:100%;background:var(--card);border:1px dashed var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--mute);text-align:center;padding:16px}
+  .photo .swatch{width:100%;flex:1;display:flex;align-items:center;justify-content:center;padding:18px}
+  .photo .swatch .t{font-size:clamp(20px,2.2vw,26px);line-height:.95;text-align:center;color:var(--bone)}
+  .photo .ph{font-size:10px;letter-spacing:2px;text-transform:uppercase}
+  .product h3{font-size:22px;line-height:1;letter-spacing:.5px}
+  .product .meta{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px;color:var(--mute)}
+  .product .meta .price{color:var(--bone);font-weight:700;font-variant-numeric:tabular-nums}
+  .buy{display:block;text-align:center;text-decoration:none;font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:14px;border:1px solid var(--bone);color:var(--bone)}
+  .buy:hover{background:var(--bone);color:var(--ink)}
+  .shop-note{margin:22px 0 0;font-size:13px;color:var(--mute);max-width:70ch}
+
+  /* judge not band */
+  .band{padding-block:56px;border-bottom:1px solid var(--line);background:var(--red);color:var(--bone)}
+  .band .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .band h2{font-size:clamp(44px,8vw,110px);line-height:.9}
+  .band .ref{text-align:right;max-width:26ch}
+  .band .ref .eyebrow{color:var(--bone-2)}
+  .band .ref p{margin:6px 0 0;font-size:18px;font-style:italic}
+  @media (max-width:640px){.band .ref{text-align:left}}
+
+  /* story */
+  .story{padding-block:64px;border-bottom:1px solid var(--line)}
+  .story h2{font-size:clamp(36px,5vw,56px);line-height:1;margin-bottom:20px}
+  .story p{margin:0 0 16px;font-size:22px;line-height:1.4;max-width:56ch}
+  .story p.kick{font-style:italic;color:var(--bone-2)}
+  .story .facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:28px}
+  .story .facts div{display:flex;flex-direction:column;gap:4px}
+  .story .facts .v{font-size:18px}
+
+  /* footer */
+  footer{padding-block:40px 56px}
+  footer .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+  footer .big{font-size:clamp(64px,14vw,180px);line-height:.85;letter-spacing:-.03em}
+  footer .links{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--mute);text-align:right}
+  footer .links span{color:var(--bone)}
+  @media (max-width:640px){footer .links{text-align:left}}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="logo anton" href="#top">FNOK</a>
+    <nav>
+      <a href="#name">The name</a>
+      <a href="#story">Story</a>
+      <a class="shop" href="#shop">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Flint, Michigan &middot; Printed by hand</div>
+      <h1 class="anton">
+        <span class="row">It&#8217;s F<span class="redact" aria-label="redacted"></span> OK</span>
+        <span class="row">to be who you are.</span>
+      </h1>
+      <div class="sub">
+        <p class="serif">The Bible didn&#8217;t put it that way. But it meant it.</p>
+        <p class="small">Shirts for people who&#8217;ve been judged and people who are tired of watching it happen. Made by a man of God who&#8217;s been on the wrong end of both. <strong>All people. No exceptions.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="name" id="name">
+    <div class="wrap grid2">
+      <div>
+        <div class="eyebrow">The name</div>
+        <h2 class="anton" style="margin-top:12px">Yeah, it means<br>what you <span>think</span><br>it means.</h2>
+      </div>
+      <div class="serif">
+        <p>Not a slur. Not a joke about anybody. A promise: you&#8217;re f&#8217;n ok, exactly as He made you.</p>
+        <p>We could have picked a name that sits quietly in a church lobby. The people this is for have never been allowed to sit quietly anywhere. So the name is loud and the message is simple.</p>
+        <p class="kick">If the word bothers you more than the way some people get treated, sit with that a minute.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="shop" id="shop">
+    <div class="wrap">
+      <div class="shop-head">
+        <div>
+          <div class="eyebrow">First run</div>
+          <h2 class="anton">Four shirts. Two colors.</h2>
+        </div>
+        <div class="eyebrow">Heavyweight tees &middot; Screened one at a time in Flint</div>
+      </div>
+
+      <div class="products">
+        <article class="product">
+          <div class="photo">
+            <div class="swatch" style="background:#111110"><div class="t anton">Jesus ate with worse people than you.</div></div>
+            <div class="ph">[ product photo ]</div>
+          </div>
+          <h3 class="anton">Worse People</h3>
+          <div class="meta"><span>Black &middot; bone &amp; gold ink</span><span class="price">[$XX]</span></div>
+          <a class="buy" href="#shop">Buy</a>
+        </article>
+
+        <article class="product">
+          <div class="photo">
+            <div class="swatch" style="background:#9b1c1c"><div class="t anton">I&#8217;ve done way worse than being myself.</div></div>
+            <div class="ph">[ product photo ]</div>
+          </div>
+          <h3 class="anton">Way Worse</h3>
+          <div class="meta"><span>Maroon &middot; bone ink</span><span class="price">[$XX]</span></div>
+          <a class="buy" href="#shop">Buy</a>
+        </article>
+
+        <article class="product">
+          <div class="photo">
+            <div class="swatch" style="background:#f4f1ea"><div class="t anton" style="color:#111110">Est&aacute;s bien.<br><span style="font-size:.6em;color:#9b1c1c">(you&#8217;re f&#8217;n ok, mijo.)</span></div></div>
+            <div class="ph">[ product photo ]</div>
+          </div>
+          <h3 class="anton">Est&aacute;s Bien</h3>
+          <div class="meta"><span>Bone &middot; black &amp; red ink</span><span class="price">[$XX]</span></div>
+          <a class="buy" href="#shop">Buy</a>
+        </article>
+
+        <article class="product">
+          <div class="photo">
+            <div class="swatch" style="background:#111110"><div class="t anton">It&#8217;s F<span style="display:inline-block;width:1.1em;height:.6em;background:#f4f1ea;vertical-align:-.02em"></span> OK</div></div>
+            <div class="ph">[ product photo ]</div>
+          </div>
+          <h3 class="anton">Redacted</h3>
+          <div class="meta"><span>Black &middot; bone ink</span><span class="price">[$XX]</span></div>
+          <a class="buy" href="#shop">Buy</a>
+        </article>
+      </div>
+
+      <p class="shop-note">Every front pairs with the <strong>Judge Not</strong> back print. Sizes S&#8211;3XL. Buy buttons connect to your payment links once they exist; until then they scroll back here.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <h2 class="anton">Judge not.</h2>
+      <div class="ref">
+        <div class="eyebrow">Matthew 7:1</div>
+        <p class="serif">It&#8217;s right there. First line. On the back of every shirt.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="story">
+    <div class="wrap grid2">
+      <div>
+        <div class="eyebrow">The story</div>
+        <h2 class="anton" style="margin-top:12px">Wear it to church.<br>Wear it to the cookout.</h2>
+      </div>
+      <div>
+        <p class="serif">FNOK started in Flint, Michigan, with a man of God who&#8217;s been judged plenty and figures you have too. He read the same Book everybody else did and kept landing on the parts about loving people, not sorting them.</p>
+        <p class="serif">Every shirt is pulled by hand, one at a time, by the guy who came up with it. No warehouse. No drop calendar. Just a press, some ink, and a point to make.</p>
+        <p class="serif kick">Wear it around somebody who needs to read it.</p>
+        <div class="facts">
+          <div><span class="eyebrow">Where</span><span class="v serif">Flint, MI</span></div>
+          <div><span class="eyebrow">Since</span><span class="v serif">2026</span></div>
+          <div><span class="eyebrow">Printed</span><span class="v serif">By hand, in-house</span></div>
+          <div><span class="eyebrow">For</span><span class="v serif">All people. No exceptions.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="big anton">FNOK</div>
+    <div class="links">
+      <div><span>fnok.org</span></div>
+      <div>Instagram &middot; <span>[@handle]</span></div>
+      <div>Email &middot; <span>[hello@fnok.org]</span></div>
+      <div>Flint, Michigan</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
